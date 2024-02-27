@@ -119,10 +119,7 @@ main {
     font-size: 125px;
 }
 
-#profile {
-    background-color: #273f6b;
-    border-top: 1px solid white;
-}
+#profile {}
 
 .headquarter {
     padding-left: 50px;
@@ -182,6 +179,12 @@ main {
     margin-bottom: 20px;
     overflow: hidden;
     border: 1px solid black;
+}
+
+.headquarter .img-headquarter .img-group:hover {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: #213558;
+    color: white;
 }
 
 .headquarter .img-headquarter .img-group img:hover {
