@@ -28,10 +28,11 @@ body {
 
 .container ul {
     padding-right: 30px;
+    display: flex;
+
 }
 
 .container ul li {
-    display: inline-block;
     padding: 5px;
     padding-right: 13px;
     margin: 0px 5px;
@@ -47,14 +48,12 @@ body {
 .container ul li a {
     color: white;
     text-decoration: none;
-    background: linear-gradient(white 0 0) bottom/100% 1px no-repeat;
-    transition: 0.5s ease;
-
+    background: linear-gradient(white 0 0) bottom/0% 1px no-repeat;
 }
 
 .container ul li a:hover {
     background-size: 100% 2px;
-
+    transition: 0.3s;
 }
 
 
@@ -69,6 +68,7 @@ body {
     width: 75px;
     height: 75px;
     padding: 5px;
+    border-radius: 50%;
 }
 
 .logo-container {
@@ -100,7 +100,7 @@ main {
     justify-content: flex-end;
     align-items: flex-start;
     background-image: url('../assets/banner.jpg');
-    background-size: cover;
+    background-size: 100% 100%;
     flex-direction: column;
 }
 
@@ -133,6 +133,7 @@ main {
 .headquarter h1 {
     margin: 40px 0px;
     font-size: 40px;
+    color: #213558;
 }
 
 .headquarter .img-headquarter {
@@ -192,16 +193,65 @@ main {
     transform: scale(1.2);
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    padding-top: 100px;
+}
+
+.about h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.about .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.about .about-container .about-image img {
+    width: 100%;
+}
+
+.about .about-container .about-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    padding-left: 40px;
+    justify-content: center;
+}
+
+.about .about-container .about-history p {
+    text-align: justify;
+    font-size: 17px;
+    margin: 10px 0px;
+}
+
 .message-form {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .form {
     display: flex;
-    flex: 1;
     justify-content: center;
+    flex: 1;
+}
+
+form {
     background-color: #213558;
+    border-radius: 10px;
+    padding: 10px;
+    width: 95%;
 }
 
 
@@ -262,33 +312,247 @@ textarea {
 
 hr {
     width: 100%;
-
 }
 
 .message {
     padding-top: 100px;
     padding-bottom: 50px;
     color: white;
-    background-color: #273f6b;
+    margin-bottom: 50px;
+}
+
+.message-title {
+    display: flex;
+    color: #213558;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message-section {
+    display: flex;
+    width: 95%;
+
+    flex: 1;
 }
 
 .message-container {
-    width: 100%;
     padding: 12px;
+    border: 1px solid black;
+    border-radius: 20px;
+    flex: 1;
+}
 
+.message-group {
+    display: flex;
+    margin: 5px 0px;
+    font-size: 15px;
 }
 
 .message-result {
-    border: 1px solid white;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    color: #213558;
+}
+
+.message-group p {
+    width: 25%;
+}
+
+.message-group span {
+    float: right;
+    margin: 0px 2px;
 }
 
 footer {
-    text-align: end;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
     background-color: #213558;
+    font-weight: bold;
+    padding: 30px;
+}
+
+footer .footer-main {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: #213558;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.footer-main h1 {
+    text-decoration: underline;
+}
+
+footer .company ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+footer .company ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+footer .company ul li a:before {
+    content: '> ';
+    font-weight: bold;
+}
+
+footer .footer-main>div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+footer .contact .contact-container .contact-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100%;
+    color: white;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
+footer .contact .contact-container .contact-group img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+footer .service .service-container {
+    margin: 5px 0px;
+}
+
+footer .newsletter {
+    display: flex;
+
+}
+
+footer .newsletter p {
+    margin-top: 10px;
+}
+
+
+
+footer .newsletter input {
+    height: 25px;
+    margin-top: 10px;
+}
+
+footer .newsletter button {
+
+    height: 25px;
+    margin-top: 10px;
+}
+
+footer .copyright {
+    padding-left: 50px;
+}
+
+footer .copyright p {
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .container ul {
+        flex-direction: column;
+        padding-right: 0;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .container ul li:not(:last-child) {}
+
+    .container ul li {
+        margin: 5px 0px;
+        border: 1px solid white;
+        width: 90%;
+    }
+
+    .logo {
+        padding: 0px;
+    }
+
+    .logo-container {
+        border: 1px solid black;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo-container a {
+        border: 1px solid black;
+        max-width: 200px;
+    }
+
+    .headquarter {
+        padding-left: 0;
+    }
+
+    .headquarter .img-headquarter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .about-container {
+        flex-direction: column;
+    }
+
+    .about .about-container .about-image {
+        margin-bottom: 50px;
+    }
+
+    .form {
+        margin-bottom: 25px;
+    }
+
+    .message-form {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .message {
+        margin-bottom: 0;
+    }
+
+    .form {
+        width: 95%;
+    }
+
+    .message-section {
+        width: 95%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    footer .footer-main>div {
+        width: 50%;
+        margin: 10px 0px;
+    }
+
+
 }
