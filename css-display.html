@@ -6,28 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Display</title>
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="js/script.js"></script>
 </head>
 
 <body>
-    <nav class="container">
-        <div class="logo-container">
-            <img src="https://tr.rbxcdn.com/61d4ba809099fcebadbe6c8dd6d67306/420/420/Hat/Png" alt="ini kucinig"
-                class="logo">
-            <a href="#">Cat Company</a>
-        </div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#profile">Our Profile</a></li>
-            <li><a href="#">Portofolio</a></li>
-            <li><a href="#message">Message Us</a></li>
-        </ul>
-    </nav>
+    <header class="header wrapper">
+        <nav class="container">
+            <div class="logo-container">
+                <a href="#"><img src="assets/logo.png" alt="ini kucinig" class="logo"></a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#profile">Our Profile</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#message">Message Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- <header>
-        <h1>Hi Rafi, Welcome to Website</h1>
-        <p>ini adalah website latihan pertama</p>
-    </header> -->
 
     <main>
 
@@ -40,16 +36,14 @@
                 <div class="img-headquarter">
                     <div class="img-group">
                         <div class="img-zoom">
-                            <img src="https://tr.rbxcdn.com/61d4ba809099fcebadbe6c8dd6d67306/420/420/Hat/Png"
-                                alt="ini kucing">
+                            <img src="assets/kucing1.jpg" alt="ini kucing">
                         </div>
                         <label for=""><b>KUCING 1</b></label>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, temporibus.</p>
                     </div>
                     <div class="img-group">
                         <div class="img-zoom">
-                            <img src="https://tr.rbxcdn.com/61d4ba809099fcebadbe6c8dd6d67306/420/420/Hat/Png"
-                                alt="ini kucing">
+                            <img src="assets/kucing2.jpg" alt="ini kucing">
                         </div>
                         <label for=""><b>KUCING 2</b></label>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum?</p>
@@ -67,42 +61,83 @@
         </section>
 
         <hr>
+        <div class="about" id="about">
+            <h1>About Us</h1>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="../assets/banner2.jpg" alt="">
+                </div>
+                <div class="about-history">
+                    <h2>Welcome to Cat Company</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni sit minus corrupti facilis
+                        quibusdam quidem aspernatur quis accusamus ducimus tempora.</p>
+
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nemo, consequuntur minima sed
+                        perspiciatis ipsa libero eius vel magni qui? Id, a quisquam! A excepturi, alias molestias minima
+                        repellat consectetur!</p>
+                </div>
+            </div>
+        </div>
+        <hr>
         <div class="message" id="message">
+            <div class="message-title">
+                <h1><b>Message Us</b></h1>
+            </div>
             <div class="message-form">
                 <div class="form">
-                    <form action="#" method="GET">
+                    <form name="message-form" onsubmit="return validateForm()">
                         <div class="form-group">
                             <h1><b>Message Us</b></h1>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama <span>:</span></label>
-                            <input type="text" name="nama" id="nama" placeholder="Nama">
+                            <input type="text" name="nama-input" id="nama-input" placeholder="Nama" required>
                         </div>
                         <div class="form-group">
                             <label for="tgl">Tanggal Lahir <span>:</span></label>
-                            <input type="date" name="tgl" id="tgl" placeholder="Tanggal Lahir">
+                            <input type="date" name="tgl-input" id="tgl-input" placeholder="Tanggal Lahir" required>
                         </div>
                         <div class="form-group">
                             <label for="tgl">Jenis Kelamin <span>:</span></label>
-                            <input type="radio" name="jenis_kelamin" id="laki-laki" value="laki-laki">
+                            <input type="radio" name="jk-input" id="laki-laki" value="laki-laki" checked>
                             <label for="laki-laki">Laki-Laki</label>
-                            <input type="radio" name="jenis_kelamin" id="perempuan" value="perempuan">
+                            <input type="radio" name="jk-input" id="perempuan" value="perempuan">
                             <label for="perempuan">Perempuan</label>
                         </div>
                         <div class="form-group">
                             <label for="pesan">Pesan <span>:</span></label>
-                            <textarea name="Pesan" id="pesan" cols="60" rows="10" placeholder="Pesan"
-                                style="resize: none;"></textarea>
+                            <textarea name="Pesan" id="pesan-input" cols="60" rows="10" placeholder="Pesan"
+                                style="resize: none;" required></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit">Submit</button>
+                            <button>Submit</button>
                         </div>
                     </form>
                 </div>
-                <div class="form">
+                <div class="message-section">
                     <div class="message-container">
                         <div class="message-result">
-                            <h1>tidak ada pesan</h1>
+                            <div class="message-group">
+                                <p>Current Time <span>:</span></p>
+                                <span id="time"></span>
+                            </div>
+                            <hr>
+                            <div class="message-group">
+                                <p>Nama <span>:</span></p>
+                                <span id="nama"></span>
+                            </div>
+                            <div class="message-group">
+                                <p>Tanggal Lahir <span>:</span></p>
+                                <span id="tgl"></span>
+                            </div>
+                            <div class="message-group">
+                                <p>Jenis Kelamin <span>:</span></p>
+                                <span id="jenis_kelamin"></span>
+                            </div>
+                            <div class="message-group">
+                                <p>Pesan <span>:</span></p>
+                                <span id="pesan"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,8 +147,59 @@
     </main>
     <hr>
     <footer>
-        Created by rafia <sup>&copy;</sup>
+        <div class="footer-main">
+            <div class="company">
+                <h1>Company</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#profile">Our Profile</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#message">Message Us</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h1>Contact</h1>
+                <div class="contact-container">
+                    <div class="contact-group">
+                        <img src="../assets/pin.png" alt="">
+                        <p>123 Street, Jakarta, Indonesia</p>
+                    </div>
+                    <div class="contact-group">
+                        <img src="../assets/phone.png" alt="">
+                        <p>+62 8192 9304 2938</p>
+                    </div>
+                    <div class="contact-group">
+                        <img src="../assets/mail.png" alt="">
+                        <p>catcompany@example.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <h1>Service</h1>
+                <div class="service-container">
+                    <h2>Monday - Friday</h2>
+                    <h3>08AM - 05PM</h3>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h1>Newsletter</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, velit!</p>
+                <input type="text" name="newsletter" id="nesletter" placeholder="Your Email">
+                <button>Submit</button>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <hr>
+            <p>cat company, Designed By Rafia<sup>&copy</sup></p>
+        </div>
     </footer>
+
+    <script>
+
+
+
+    </script>
 </body>
 
 </html>
