@@ -74,17 +74,24 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
     margin-left: 5px;
-
+    width: 100%;
+    flex: 1;
 }
 
 .logo-container a {
     color: white;
     text-decoration: none;
-    max-width: 30px;
+    max-width: 100px;
     font-size: 20px;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo-container h3 {
+    color: white;
 }
 
 main {
@@ -102,6 +109,18 @@ main {
     background-image: url('../assets/banner.jpg');
     background-size: 100% 100%;
     flex-direction: column;
+    color: white;
+}
+
+.banner h3 {
+    margin-left: 120px;
+    height: 100%;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-start;
+    margin-top: 320px;
+    font-size: 20px;
+
 }
 
 .banner h1 {
@@ -470,6 +489,7 @@ footer .copyright p {
     .container {
         flex-direction: column;
         padding-left: 0;
+        position: static;
     }
 
     .container ul {
@@ -478,6 +498,7 @@ footer .copyright p {
         width: 100%;
         align-items: center;
         margin-bottom: 10px;
+
     }
 
     .container ul li:not(:last-child) {}
@@ -494,6 +515,12 @@ footer .copyright p {
         margin-left: 20px;
     }
 
+    .banner h3 {
+        margin-left: 22px;
+        font-size: 19px;
+        filter: drop-shadow(5px 5px 7px black);
+    }
+
     .banner h1 span {
         font-size: 63px;
     }
@@ -508,6 +535,7 @@ footer .copyright p {
         justify-content: center;
         margin: 0;
         margin-bottom: 10px;
+
     }
 
     .logo-container a {

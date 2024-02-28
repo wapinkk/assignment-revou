@@ -1,3 +1,17 @@
+let nama_panggilan = prompt('Siapa Namamu?');
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (nama_panggilan == null || nama_panggilan == '') {
+        nama_panggilan = 'Tuan'
+    } else {
+
+    }
+    const nama_panggilan1 = document.getElementById('nama_panggilan');
+    nama_panggilan1.innerHTML = nama_panggilan;
+
+});
+
+
 function validateForm() {
     const nama = document.getElementById('nama-input').value;
     const tgl = document.getElementById('tgl-input').value;
